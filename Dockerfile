@@ -17,8 +17,10 @@ COPY /run_gotty.sh /run_gotty.sh
 
 RUN chmod 744 /run_gotty.sh
 
+RUN mkdir /home/linda
 RUN addgroup gotty
 RUN useradd -g gotty gotty
+RUN chown gotty:gotty /home/gotty
 USER gotty
 
 EXPOSE 8080
